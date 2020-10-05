@@ -33,7 +33,7 @@ const AuthState = (props) => {
     };
     try {
       const res = await axios.post(
-        "https://contactshooksmernbk.herokuapp.com/api/users",
+        "https://finalcontactkeeperbk.herokuapp.com/api/users",
         formData,
         config
       );
@@ -45,7 +45,7 @@ const AuthState = (props) => {
     } catch (error) {
       dispatch({
         type: REGISTER_FAIL,
-        payload: error.data.msg,
+        payload: error.response.data.msg,
       });
     }
   };
@@ -58,7 +58,7 @@ const AuthState = (props) => {
     }
     try {
       const res = await axios.get(
-        "https://contactshooksmernbk.herokuapp.com/api/auth"
+        "https://finalcontactkeeperbk.herokuapp.com/api/auth"
       );
       dispatch({
         type: USER_LOADED,
@@ -80,7 +80,7 @@ const AuthState = (props) => {
     };
     try {
       const res = await axios.post(
-        "https://contactshooksmernbk.herokuapp.com/api/auth",
+        "https://finalcontactkeeperbk.herokuapp.com/api/auth",
         formData,
         config
       );
@@ -93,7 +93,7 @@ const AuthState = (props) => {
       // LOGIN_FAIL
       dispatch({
         type: LOGIN_FAIL,
-        payload: error.data.msg,
+        payload: error.response.data.msg,
       });
     }
   };

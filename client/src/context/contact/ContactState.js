@@ -43,7 +43,7 @@ const ContactState = (props) => {
   const getContacts = async () => {
     try {
       const res = await axios.get(
-        "https://contactshooksmernbk.herokuapp.com/api/contacts"
+        "https://finalcontactkeeperbk.herokuapp.com/api/contacts"
       );
       dispatch({
         type: GET_CONTACTS,
@@ -53,7 +53,7 @@ const ContactState = (props) => {
       console.log(error);
       dispatch({
         type: FAILED_ADD,
-        payload: error.msg,
+        payload: error.response.msg,
       });
     }
   };
@@ -70,7 +70,7 @@ const ContactState = (props) => {
     };
     try {
       const res = await axios.post(
-        "https://contactshooksmernbk.herokuapp.com/api/contacts",
+        "https://finalcontactkeeperbk.herokuapp.com/api/contacts",
         contact,
         config
       );
@@ -82,7 +82,7 @@ const ContactState = (props) => {
       console.log(error);
       dispatch({
         type: FAILED_ADD,
-        payload: error.msg,
+        payload: error.response.msg,
       });
     }
   };
@@ -90,7 +90,7 @@ const ContactState = (props) => {
   const deleteContact = async (id) => {
     try {
       await axios.delete(
-        `https://contactshooksmernbk.herokuapp.com/api/contacts/${id}`
+        `https://finalcontactkeeperbk.herokuapp.com/api/contacts/${id}`
       );
       dispatch({
         type: DELETE_CONTACT,
@@ -100,7 +100,7 @@ const ContactState = (props) => {
       console.log(error);
       dispatch({
         type: FAILED_ADD,
-        payload: error.msg,
+        payload: error.response.msg,
       });
     }
   };
