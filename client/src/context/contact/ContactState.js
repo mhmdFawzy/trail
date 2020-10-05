@@ -53,7 +53,7 @@ const ContactState = (props) => {
       console.log(error);
       dispatch({
         type: FAILED_ADD,
-        payload: error.response.msg,
+        payload: error.msg,
       });
     }
   };
@@ -82,7 +82,7 @@ const ContactState = (props) => {
       console.log(error);
       dispatch({
         type: FAILED_ADD,
-        payload: error.response.msg,
+        payload: error.msg,
       });
     }
   };
@@ -100,7 +100,7 @@ const ContactState = (props) => {
       console.log(error);
       dispatch({
         type: FAILED_ADD,
-        payload: error.response.msg,
+        payload: error.msg,
       });
     }
   };
