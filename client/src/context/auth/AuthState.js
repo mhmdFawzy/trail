@@ -58,7 +58,7 @@ const AuthState = (props) => {
     }
     try {
       const res = await axios.get(
-        "https://contactskeepermernapp.herokuapp.com/api/auth"
+        "https://contactshooksmernbk.herokuapp.com/api/auth"
       );
       dispatch({
         type: USER_LOADED,
@@ -80,7 +80,7 @@ const AuthState = (props) => {
     };
     try {
       const res = await axios.post(
-        "https://contactskeepermernapp.herokuapp.com/api/auth",
+        "https://contactshooksmernbk.herokuapp.com/api/auth",
         formData,
         config
       );
