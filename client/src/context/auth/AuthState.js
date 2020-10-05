@@ -33,7 +33,7 @@ const AuthState = (props) => {
     };
     try {
       const res = await axios.post(
-        "https://contactskeepermernapp.herokuapp.com/api/users",
+        "https://contactshooksmernbk.herokuapp.com/api/users",
         formData,
         config
       );
