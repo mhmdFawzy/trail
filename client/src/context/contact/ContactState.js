@@ -42,7 +42,9 @@ const ContactState = (props) => {
   // GET_CONTACTS
   const getContacts = async () => {
     try {
-      const res = await axios.get("/api/contacts");
+      const res = await axios.get(
+        "https://contactskeepermernapp.herokuapp.com/api/contacts"
+      );
       dispatch({
         type: GET_CONTACTS,
         payload: res.data,
@@ -67,7 +69,11 @@ const ContactState = (props) => {
       },
     };
     try {
-      const res = await axios.post("/api/contacts", contact, config);
+      const res = await axios.post(
+        "https://contactskeepermernapp.herokuapp.com/api/contacts",
+        contact,
+        config
+      );
       dispatch({
         type: ADD_CONTACT,
         payload: res.data,
@@ -83,7 +89,9 @@ const ContactState = (props) => {
   //   DELETE_CONTACT
   const deleteContact = async (id) => {
     try {
-      await axios.delete(`/api/contacts/${id}`);
+      await axios.delete(
+        `https://contactskeepermernapp.herokuapp.com/api/contacts/${id}`
+      );
       dispatch({
         type: DELETE_CONTACT,
         payload: id,

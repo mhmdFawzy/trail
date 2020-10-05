@@ -32,7 +32,11 @@ const AuthState = (props) => {
       },
     };
     try {
-      const res = await axios.post("/api/users", formData, config);
+      const res = await axios.post(
+        "https://contactskeepermernapp.herokuapp.com/api/users",
+        formData,
+        config
+      );
       dispatch({
         type: REGISTER_SUCCESS,
         payload: res.data,
@@ -53,7 +57,9 @@ const AuthState = (props) => {
       setAuthToken(localStorage.token);
     }
     try {
-      const res = await axios.get("/api/auth");
+      const res = await axios.get(
+        "https://contactskeepermernapp.herokuapp.com/api/auth"
+      );
       dispatch({
         type: USER_LOADED,
         payload: res.data,
@@ -73,7 +79,11 @@ const AuthState = (props) => {
       },
     };
     try {
-      const res = await axios.post("/api/auth", formData, config);
+      const res = await axios.post(
+        "https://contactskeepermernapp.herokuapp.com/api/auth",
+        formData,
+        config
+      );
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res.data,
